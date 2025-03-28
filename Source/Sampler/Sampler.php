@@ -112,9 +112,9 @@ abstract class Sampler implements Zformat\Parameterizable
      * Generate a discrete uniform distribution.
      */
     public function getInteger(
-        int $lower          = null,
-        int $upper          = null,
-        array &$exclude = null
+        ?int $lower          = null,
+        ?int $upper          = null,
+        ?array &$exclude = null
     ): int {
         if (null === $lower) {
             $lower = $this->_parameters->getParameter('integer.min');
@@ -170,7 +170,7 @@ abstract class Sampler implements Zformat\Parameterizable
     /**
      * Generate a continuous uniform distribution.
      */
-    public function getFloat(float $lower = null, float $upper = null): float
+    public function getFloat(?float $lower = null, ?float $upper = null): float
     {
         if (null === $lower) {
             $lower = $this->_parameters->getParameter('float.min');
